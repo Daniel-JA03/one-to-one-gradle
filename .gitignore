@@ -1,3 +1,43 @@
+# Archivos de compilación de Java
+*.class
+*.jar
+*.war
+*.ear
+
+# Archivos de salida de Eclipse
+/.settings/
+/bin/
+/tmp/
+/.target/
+
+# Archivos de configuración de Eclipse y STS
+.project
+.classpath
+.idea/
+*.launch
+
+# Archivos de configuración de IntelliJ IDEA
+/.idea/
+/*.iml
+*.iws
+.idea/
+
+# Archivos de dependencias generados por Maven/Gradle
+/.mvn/
+/target/
+/.gradle/
+
+# Archivos de configuración del sistema
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Archivos de logs
+*.log
+
+# Archivos de dependencias de Spring Boot (si aplica)
+spring-boot-loader.properties
 .gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
@@ -55,3 +95,4 @@ build/
 # Otros
 .DS_Store
 *.log
+
