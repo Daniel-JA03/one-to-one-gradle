@@ -1,34 +1,37 @@
 package com.coudevi;
 
-import com.coudevi.model.Documento;
-import com.coudevi.model.Persona;
-import com.coudevi.model.TipoDocumento;
-import com.coudevi.service.PersonaService;
+import com.coudevi.model.Contrato;
+import com.coudevi.model.TipoContrato;
+import com.coudevi.model.Trabajador;
+import com.coudevi.service.TrabajadorService;
 
 import java.util.Date;
 
 public class MainOneToOne {
     public static void main(String[] args) {
-        PersonaService service = new PersonaService();
 
-        // Crear persona
-        Persona persona = new Persona("Juan Pérez 2");
+        TrabajadorService service = new TrabajadorService();
 
-        // Crear documento
-        Documento doc = new Documento(TipoDocumento.CARNET_EXTRANJERIA, new Date());
+        // Crear Trabajador
+         Trabajador trabajador = new Trabajador("Diego Sebastian", "Cubas Illanes");
 
-        // Asignar documento a la persona
-        persona.asignarDocumento(doc);
+        // Crear Contrato
+         Contrato contrato = new Contrato(TipoContrato.INDEFINIDO, 8);
+
+        // Asignar Contrato al Trabajador
+         trabajador.asignarContrato(contrato);
 
         // Persistir
-        service.crearPersona(persona);
+         service.crearTrabajador(trabajador);
 
         // Recuperar y mostrar
-        service.obtenerPersonas().forEach(p -> {
-            System.out.println("Persona: " + p.getNombre());
-            if (p.getDocumento() != null) {
-                System.out.println("  Documento Tipo: " + p.getDocumento().getTipo());
-                System.out.println("  Fecha Exp: " + p.getDocumento().getFechaExpedicion());
+        service.obtenerTrabajadores().forEach(t -> {
+            System.out.println("Trabajador: " + t.getNombre() + " " + t.getApellido());
+            if (t.getContrato() != null) {
+                System.out.println("Tipo Contrato: " + t.getContrato().getTipoContrato());
+                System.out.println("Horas Semanales: " + t.getContrato().getHorasSemanales());
+            } else {
+                System.out.println("** El trabajador no tiene contrato **");
             }
         });
 

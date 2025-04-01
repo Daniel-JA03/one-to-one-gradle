@@ -6,12 +6,12 @@
     <persistence-unit name="oneToOnePU">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <!-- Listado de clases de entidad -->
-        <class>com.coudevi.model.Persona</class>
-        <class>com.coudevi.model.Documento</class>
+        <class>com.coudevi.model.Trabajador</class>
+        <class>com.coudevi.model.Contrato</class>
         <properties>
             <!-- Configuración de conexión a MySQL -->
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/demo_jpa"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/practica_onetoone"/>
             <property name="jakarta.persistence.jdbc.user" value="root"/>
             <property name="jakarta.persistence.jdbc.password" value="mysql"/>
             <!-- Propiedades de Hibernate -->
