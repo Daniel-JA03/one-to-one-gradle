@@ -27,6 +27,7 @@ public class MainOneToOne {
         // Recuperar y mostrar
         service.obtenerTrabajadores().forEach(t -> {
             System.out.println("Trabajador: " + t.getNombre() + " " + t.getApellido());
+            // Verificar si el trabajador tiene un contrato asociado
             if (t.getContrato() != null) {
                 System.out.println("Tipo Contrato: " + t.getContrato().getTipoContrato());
                 System.out.println("Horas Semanales: " + t.getContrato().getHorasSemanales());

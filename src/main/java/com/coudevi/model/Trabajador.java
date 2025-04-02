@@ -19,6 +19,7 @@ public class Trabajador {
     @OneToOne(mappedBy = "trabajador", cascade = CascadeType.ALL, orphanRemoval = true)
     private Contrato contrato;
 
+
     public Trabajador() {
     }
 
